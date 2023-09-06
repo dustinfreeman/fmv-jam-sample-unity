@@ -21,11 +21,13 @@ We built this sample as a demo that "definitely works". We strongly recommend yo
 ### Preparing Video Files
 
 One common issue is incomptable codecs, based on how the video was recorded or edited. Here's an example error from Unity:
+
 ![image](https://github.com/dustinfreeman/fmv-jam-sample-unity/assets/940836/ca817dac-272f-4740-8df6-4f0b0fbc04d7)
 
 You should always just convert the video instead of trying to get Unity or another engine to play the codec.
 
 The easier conversion app is [Handbrake](https://handbrake.fr/). Handbrake's default settings should convert to a usable codec, H.264 is a good choice:
+
 ![image](https://github.com/dustinfreeman/fmv-jam-sample-unity/assets/940836/e799f17d-2a06-4988-ad64-b15dd922fc94)
 
 ### Chroma Key
@@ -44,9 +46,12 @@ NOTE: The GODOT engine prefers .ogv videos. But this does not work in Unity. Unf
 To ensure your assets load into a VideoPlayer object in editor and when shipped:
 1. Put all your video assets directly in `Assets/StreamingAssets` ([more info](https://docs.unity3d.com/ScriptReference/Application-streamingAssetsPath.html))
 2. Set each VideoPlayer component Source to URL, and you may leave the URL field empty
+   
 ![image](https://github.com/dustinfreeman/fmv-jam-sample-unity/assets/940836/9578c7ef-cffd-4c90-8b7f-43db31fb48ed)
+
 3. Attach our custom `LoadVideo` component to each GameObject containing a VideoPlayer
 4. In the `LoadVideo` component, set `videoName` to the filename with extension (even though this doesn't show in the Unity project view)
+   
 ![image](https://github.com/dustinfreeman/fmv-jam-sample-unity/assets/940836/73a87224-bd6a-40a1-9bc9-f657f72551d8)
 
 

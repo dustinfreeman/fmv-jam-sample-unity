@@ -50,9 +50,11 @@ To ensure your assets load into a VideoPlayer object in editor and when shipped:
 ![image](https://github.com/dustinfreeman/fmv-jam-sample-unity/assets/940836/9578c7ef-cffd-4c90-8b7f-43db31fb48ed)
 
 3. Attach our custom `LoadVideo` component to each GameObject containing a VideoPlayer
-4. In the `LoadVideo` component, set `videoName` to the filename with extension (even though this doesn't show in the Unity project view)
-   
-![image](https://github.com/dustinfreeman/fmv-jam-sample-unity/assets/940836/73a87224-bd6a-40a1-9bc9-f657f72551d8)
+4. In the `LoadVideo` component, set `videoName` to the filename with extension (even though this doesn't show in the Unity project view). Set the width/height to the pixel dimension of the video.
+
+![image](https://github.com/dustinfreeman/fmv-jam-sample-unity/assets/940836/78be020d-5315-48c2-8d11-a36ad018a9ff)
+
+Note: If you're playing multiple videos, then you're probably going to end up with duplicating assets, since each VideoPlayer renders to a texture, which is attached to a material. If you don't duplicate these, then they'll end up with one video overwriting over all others. You can do this manually, or in code. Check out what `LoadVideo.cs` does, which isn't necessarily the best solution.
 
 
 

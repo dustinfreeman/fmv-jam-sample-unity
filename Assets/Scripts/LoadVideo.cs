@@ -13,9 +13,11 @@ public class LoadVideo : MonoBehaviour
     [SerializeField]
     protected int videoHeight = 512;
 
+    protected VideoPlayer videoPlayer;
+
     void Start()
     {
-        var videoPlayer = GetComponent<VideoPlayer>();
+        videoPlayer = GetComponent<VideoPlayer>();
         var meshRenderer = GetComponent<MeshRenderer>();
 
         var renderTexture = new RenderTexture(videoWidth, videoHeight, 32);
@@ -25,6 +27,13 @@ public class LoadVideo : MonoBehaviour
         meshRenderer.material = new Material(meshRenderer.material);
         meshRenderer.material.mainTexture = renderTexture;
 
+        videoPlayer.url = Application.streamingAssetsPath + "/" + videoName;
+    }
+
+    public void SwitchToVideo(string newVideoName) 
+    {
+        //HACK: would love to do this in a single-line setter
+        videoName = newVideoName;
         videoPlayer.url = Application.streamingAssetsPath + "/" + videoName;
     }
 }

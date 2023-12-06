@@ -12,6 +12,8 @@ Playable on itch: https://escapecharacter.itch.io/fmv-jam-sample-unity
 
 Please contribute! Please make an issue and/or a pull request if you find a problem or have an improvement. 
 
+Original code by @ahintoflime
+
 ## Using Video in Unity
 
 Unity and especially WebGL builds are incredibly finicky; it is easy to lose many hours debugging poorly-documented issues that you'd rather spend being creative.
